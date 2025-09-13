@@ -53,85 +53,6 @@ TripTailor is an intelligent travel planning platform that leverages AI to help 
 -   `chat_management/`: User chat history and management
 -   `user_management/`: User profile and authentication handling
 
-## 🚀 Getting Started
-
-### Prerequisites
-
--   Node.js 18+ and npm
--   AWS CLI configured with appropriate permissions
--   Python 3.9+ (for Lambda functions)
--   AWS account with DynamoDB, Lambda, and Cognito access
-
-### Frontend Setup
-
-1. **Clone the repository**
-
-    ```bash
-    git clone <repository-url>
-    cd TripTailor
-    ```
-
-2. **Install dependencies**
-
-    ```bash
-    cd front
-    npm install
-    ```
-
-3. **Environment Configuration**
-   Create a `.env` file in the `front` directory:
-
-    ```env
-    VITE_HANDLE_CHAT_LAMBDA_URL=your_lambda_url
-    VITE_GET_USER_CHATS_LAMBDA_URL=your_lambda_url
-    VITE_SET_ACTIVE_CHAT_LAMBDA_URL=your_lambda_url
-    VITE_DELETE_CHAT_LAMBDA_URL=your_lambda_url
-    VITE_UPDATE_TRIP_CARD_LAMBDA_URL=your_lambda_url
-    VITE_FETCH_TRIP_CARD_DATA_LAMBDA_URL=your_lambda_url
-    VITE_GET_FLIGHTS_OFFERS_PRICE_LAMBDA_URL=your_lambda_url
-    VITE_GET_HOTELS_OFFERS_PRICE_LAMBDA_URL=your_lambda_url
-    VITE_GET_HOTELS_RATING_LAMBDA_URL=your_lambda_url
-    VITE_CREATE_FLIGHT_ORDER_LAMBDA_URL=your_lambda_url
-    VITE_BOOK_HOTEL_LAMBDA_URL=your_lambda_url
-    VITE_FETCH_BOOKING_DATA_LAMBDA_URL=your_lambda_url
-    VITE_REMOVE_FLIGHT_LAMBDA_URL=your_lambda_url
-    VITE_REMOVE_HOTEL_LAMBDA_URL=your_lambda_url
-    VITE_COGNITO_LOGIN_URL=your_cognito_login_url
-    VITE_COGNITO_SIGNUP_URL=your_cognito_signup_url
-    VITE_COGNITO_CLIENT_ID=your_cognito_client_id
-    VITE_COGNITO_REDIRECT_URI=your_redirect_uri
-    ```
-
-4. **Start development server**
-
-    ```bash
-    npm run dev
-    ```
-
-5. **Build for production**
-    ```bash
-    npm run build
-    ```
-
-### Backend Setup
-
-1. **AWS Infrastructure**
-
-    - Set up DynamoDB tables: `chat-history`, `user`, `Flights`, `Hotels`, `ServiceTokens`
-    - Configure AWS Cognito user pool
-    - Deploy Lambda functions with appropriate IAM roles
-
-2. **Lambda Dependencies**
-   Each Lambda function includes its own `layers/python.zip` with required dependencies:
-
-    - `boto3` for AWS SDK
-    - `requests` for HTTP calls
-    - `openai` for AI integration
-
-3. **API Keys Configuration**
-    - Amadeus API credentials in Lambda environment variables
-    - OpenAI API key for chat functionality
-
 ## 📁 Project Structure
 
 ```
@@ -233,12 +154,7 @@ TripTailor/
 
 ### Frontend Deployment
 
-The frontend can be deployed to any static hosting service:
-
--   AWS S3 + CloudFront
--   Vercel
--   Netlify
--   GitHub Pages
+The frontend is currently deployed on AWS Amplify
 
 ### Backend Deployment
 
@@ -249,17 +165,11 @@ Lambda functions are deployed using:
 -   Serverless Framework
 -   Manual ZIP upload via AWS Console
 
-## 🤝 Contributing
+## 🤝 Contributors
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+-  [Nadir Elmakias](https://github.com/Nadir0702)
+-  [Netanel Alis](https://github.com/NetanelAlis)
+-  [Nadav Elkayam](https://github.com/NadavElkayam)
 
 ## 🙏 Acknowledgments
 
@@ -267,10 +177,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 -   **OpenAI** for powerful AI capabilities
 -   **AWS** for robust cloud infrastructure
 -   **React Community** for excellent tooling and libraries
-
-## 📞 Support
-
-For support, email support@triptailor.com or join our Slack channel.
 
 ---
 
